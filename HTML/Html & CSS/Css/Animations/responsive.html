@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Mobile screen - comment just extra information for better reading code-(ctrl+/) */
+         @media screen and (min-width:100px) and (max-width:480px){
+            
+            body{
+            background-color: red;
+            color:white;
+            }
+           ul{
+            list-style: decimal;
+          }
+          ul li{
+            display: inline;
+            margin:10px;
+        }
+
+      }
+
+      /*Tablet screen*/
+       
+      @media screen and (min-width:480px) and (max-width:768px){
+            
+            body{
+            background-color:purple;
+            color:white;
+            font-style: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+           ul{
+            list-style: none;
+          }
+          ul li{
+            display: inline;
+            margin:10px;
+        }
+
+      }
+       
+        
+    </style>
+</head>
+<body>
+    <h1>Responsive Website</h1>
+    <p><strong>Note:</strong>@media tag helps us to achieve responsive of website</p>
+
+    <ul>
+        <li>Name</li>
+        <li>Login</li>
+        <li>Shop</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+strong{
+    color:red;
+    background-color: aquamarine;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+h1{
+    color: antiquewhite;
+    background-color: blueviolet;
+}
+h2{
+    color: aqua;
+    background-color: black;
+}
+em{
+    color: aquamarine;
+    background-color: brown;
+}
+h1:hover{
+    background-color:brown;
+}
+body{
+    background-color: aqua;
+}
