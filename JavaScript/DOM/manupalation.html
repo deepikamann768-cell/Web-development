@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Sale 50%- on all the products</p>
+    <div class="demo2">THis is div</div>
+    <button id="demo3">Login</button>
+    <script>
+        //1.Change of text-content use method:text content
+        const ele=document.getElementById("demo")
+        console.log(ele)
+        ele.textContent="Welcome to amazon"
+
+        //or
+        //ele.innerHTML="welcome to amazon"
+
+        //2.change/update the HTML Tags-innerhtml
+        const ele1=document.querySelector(".demo2")
+        ele1.innerHTML = "<h2>This is heading</h2>"
+
+        //3.change the style:.style.propertyname
+        const ele2=document.getElementById("demo3")
+        ele2.style.backgroundColor="Blue"
+        ele2.style.color="white"
+        ele2.textContent="Logout"
+
+    </script>
+</body>
+</html>

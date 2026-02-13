@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">Hello Everyone</p>
+    <p>THis is second paragraph</p>
+    <div class="box">This is div 0</div>
+    <div class="box">This is div-1</div>
+    <p>This is 3 para</p>
+    <div class="demo">Box-0</div>
+    <div class="demo">Box-1</div>
+
+    <script>
+        //select HTML Tags in Js
+        //1.When an element is present with id then use getElementById("id name of tag which we wan to select in js")
+        const abc=document.getElementById("p1")//Selected paragraph which has id-p1
+        console.log(abc)
+
+        //2.Classname
+        const xyz=document.getElementsByClassName("box")
+        console.log(xyz)
+        console.log(xyz[1])
+        
+
+        //3.Tagname
+        const pqr=document.getElementsByTagName("p")
+        console.log(pqr)
+
+        //4.querySelector-Follow the rules of CSS- #id,.classname,tagname
+        //single tag
+        const tags = document.querySelector(".demo")
+        console.log(tags)
+
+        //Multiple tags
+        const tag2=document.querySelectorAll(".demo")
+        console.log(tag2)
+    </script>
+</body>
+</html>

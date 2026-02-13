@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Roll a dice-No.'s(1 to 10)
+        //lucky no
+        let luckyNo = Math.floor(Math.random()*6)+1
+        while(true){
+            //condition is true
+            guess=prompt("Enter your choice from 1 to 6")
+            if(luckyNo==guess){
+                console.log("You won")
+                break;
+            }else{
+                console.log("Better luck next time")
+            }
+        }
+    </script>
+</body>
+</html>

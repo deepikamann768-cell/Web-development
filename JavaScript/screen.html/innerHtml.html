@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "myH">Hello Learners</h1>
+    <h1 id ="my">Amazon</h1>
+    <button onclick="ChangeContent()">Click me to change </button>
+    <button onclick="ChangeAmazon()">Change</button>
+    <script>
+        function ChangeContent(){
+            //Calling Html tag-h1 By their ID Name
+            //Element = tag
+            const abc=document.getElementById("myH")//SElected h1 tag with ID myH in JS
+            console.log(abc)
+
+            //INNER HTML-It is used to update the content of HTML Tag
+            abc.innerHTML="Welcome to UNLOX JS"
+        }
+        function ChangeAmazon(){
+            const pqr=document.getElementById("my")
+            console.log(pqr)
+            pqr.innerHTML="Flipkart"
+        }
+        //IN class the function is not giving output, but in id it is working and giving output
+    </script>
+</body>
+</html>

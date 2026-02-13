@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //elseif-multiple conditions at same time
+
+        //Amount>500----Free
+        //Amount>400----delivery Rs.20
+        //Amount>300----delivery Rs.30
+        //order less than 200-can't order not minimum cart value
+
+        let amount = 1000
+        if(amount>500){
+            console.log("Free Delivery")
+        }
+        else if(amount>400){
+            console.log("Delivery charges will be Rs.20")
+        }
+        else if(amount>300){
+            console.log("Delivery charges will be Rs.30")
+        }
+        else{
+            console.log("Can't place order min cart value is Rs.300")
+        }
+
+    </script>
+</body>
+</html>

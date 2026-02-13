@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: beige;
+            display:flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .container{
+            background-color: aqua;
+            padding: 20px;
+            width:350px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2{
+            text-align: center;
+        }
+        input{
+            width:70%;
+            padding:8px;
+        }
+        button{
+            padding:8px;
+            border: none;
+            background-color: blue;
+            color: azure;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: blueviolet;
+        }
+        ul{
+            list-style: none;
+            padding: 0px;
+        }
+        li{
+            background-color: plum;
+            padding:8px;
+            margin-top: 5px;
+            display:flex;
+            justify-content: space-between;
+        }
+        /*Dark Mode*/
+        .dark{
+            background-color: black;
+            color: white;
+        }
+        .dark .container{
+            background-color: rgba(83, 82, 82, 0.927);
+        }
+        .dark li{
+            background-color: red;
+        }
+    </style>
+</head>
+<body id="body" class="dark">
+    <div class="container">
+        <h2>Smart Notes:</h2>
+        <input type="text" id="noteInput" placeholder="write a note">
+        <button onclick="addNote()">Add</button>
+        <p id="message"></p>
+        <ul id="notelist">
+            <li>GYM</li>
+            <li>College</li>
+        </ul>
+        <p>Total Notes:<span id="total">0</span></p>
+        <button onclick="toogleMode()">🌙</button>
+    </div>
+    <script>
+        let notes=[]//Array-To store data of Multiple types
+        //Feature-Add Notes
+        function addNote(){
+            //Logic:Get data from user(input) and add in my UI tag(list)
+
+            let input=document.getElementById("noteInput");
+            let message=document.getElementById("message")
+
+            let value=input.value;
+
+            if(value === ""){
+                message.innerHTML="PLease write something";
+                return;
+            }
+
+            //Array name.push(value which I am adding)
+            notes.push(value)
+            console.log(notes)
+            input.value="";
+            message.innerHTML=""
+        }
+        //Theme change task
+        function toogleMode(){
+            let body=document.getElementById("body")
+            if(body.classList.contains("dark")){
+                body.classList.remove("dark")
+            }else{
+                body.classList.add("dark")
+            }
+            //classList is used when you want to get the value of class for any tag
+        }
+    </script>
+</body>
+</html>
