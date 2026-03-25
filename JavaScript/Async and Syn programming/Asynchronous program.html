@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Asynchronous Programming
+        //TAsk1-Make Coffee
+        function Coffee(){
+            console.log("Step1:Boling Water:5sec")
+            setTimeout(function(){
+                console.log("Step2:Water is ready")
+            },2000)
+            console.log("Step3:doing other tasks")
+            console.log("Step4:Add milk")
+            console.log("Step5:Add sugar")
+            console.log("Step6:boil Again")
+            setTimeout(function(){
+                console.log("Step7:Coffee is ready!")
+            },5000)
+        }
+        Coffee()
+
+        function add(){
+            console.log(5+6)
+        }
+        add()
+        function Multipy(){
+            console.log(8*6)
+        }
+        Multipy()
+        function Total(){
+            console.log("Total bill:",90+145)
+        }
+        Total()
+    </script>
+</body>
+</html>

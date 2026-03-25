@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //fetch-means to get something
+    //APi-having data
+    //Syntax
+    //fetch("Api Address"):fetch data from api address
+    fetch("https://fakestoreapi.com/products/1")
+   .then(response=>response.json())//json()= used to connect API response in human readable form
+    .then(data=>console.log(data))//.then() method : gives output when it is successful
+
+  .catch(error=>console.log("Error connecting to API",error))//.catch() method: gives output when it is unsuccessful
+  
+  //(Parameter/which store value=output)
+  </script> 
+</body>
+</html>

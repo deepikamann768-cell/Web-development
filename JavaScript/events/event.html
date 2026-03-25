@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Add to Cart</button>
+    <p id="msg">Iphone</p>
+
+    <script>
+        //Events:Actions performed by users in webpage
+        //addEventListener('Type of event',Task-Function)-To capture the users acction
+        //Select Tag/Element
+
+        let button = document.getElementById("btn")
+        let message=document.getElementById("msg")
+        //Syntax-TagName(which is stored in elements).addEventListener('Type of event',function(){//Task})
+        //Syntax-VariableName(which is storing html tag).addEventListener('Type of event',function(){//Task})
+
+        button.addEventListener('click',function(){
+            message.innerHTML="Product Added to cart"
+            message.style.color="red"
+            message.style.fontStyle="italic"
+
+        })
+    </script>
+</body>
+</html>

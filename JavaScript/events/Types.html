@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mydiv{
+            width:200px;
+            height:200px;
+            background-color: blue;
+            overflow:auto;
+        }
+        .content{
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Types of Events</h1>
+    <button id="myBtn">Click Me</button>
+    <input id="myInput" placeholder="Search...">
+    <div id="mydiv">
+        <div class="content">Scroll Inside Me</div>
+    </div>
+
+    <script>
+        //Syntax-TagName(variable name).addEventListener('type of event')
+        const button=document.getElementById("myBtn");
+        const input=document.getElementById("myInput");
+        const div = document.getElementById("mydiv");
+
+        //1.click
+       // button.addEventListener('click',function(){
+        //    alert('Logged in')
+       // })
+
+       //Input-Keyboard action-keyup and keydown
+       //Keyup-Key is released
+       //input.addEventListener('keyup',function(e){//e parameter will act like variable: to store the value of keyboard
+        //console.log('key Released'+e.key)
+      //})
+
+       //Keydown-KeyPressed
+       //input.addEventListener('keydown',function(e){//e parameter will act like variable: to store the value of keyboard
+        //console.log('key presssed'+e.key)
+       //})
+
+       //Change-the value in input tag & change value as well
+       //input.addEventListener('change',function(e){//e parameter will act like variable: to store the value of input tag
+        //console.log('Final value of input tag '+e.target.value)
+      //})
+
+       //mouse event
+       div.addEventListener('mouseover',function(){
+        div.style.backgroundColor="orange"
+       })
+       div.addEventListener('mouseout',function(){
+        div.style.backgroundColor="green"
+       })
+       div.addEventListener('scroll',function(){
+        console.log("scrolled")
+       })
+      </script>
+
+</body>
+</html>

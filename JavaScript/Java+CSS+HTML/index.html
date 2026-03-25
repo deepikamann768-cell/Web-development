@@ -67,8 +67,6 @@
         <button onclick="addNote()">Add</button>
         <p id="message"></p>
         <ul id="notelist">
-            <li>GYM</li>
-            <li>College</li>
         </ul>
         <p>Total Notes:<span id="total">0</span></p>
         <button onclick="toogleMode()">🌙</button>
@@ -95,6 +93,25 @@
             input.value="";
             message.innerHTML=""
         }
+        //Function Display-How to display value of user in UI
+        //Hint-Use createElement Method of DOM
+        function displayNotes(){
+            let list=document.getElementById("notelist")//ul tag
+            let total=document.getElementById("total")//span
+            list.innerHTML="";
+
+            //for loop to access the data of array
+            for(let i=0;i<notes.length;i++){
+                //Tag=Element-create element("TagName")
+                let li=document.createElement("li");
+                li.innerHTML=notes[i];
+                list.appendChild(li);
+            }
+            //Total count-List Length-Total no.of data
+            total.innerHTML=notes.length;
+        }
+
+
         //Theme change task
         function toogleMode(){
             let body=document.getElementById("body")

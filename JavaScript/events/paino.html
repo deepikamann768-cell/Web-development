@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .paino{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .key{
+            width:600px;
+            height:200px;
+            border: 1px solid black;
+            background-color: white;
+            margin: 2px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,1);
+            cursor:pointer;
+            transition:background-color 0.3s;
+        }
+        .key:hover{
+            background-color: #f0f0f0;
+        }
+        .key:active{
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Piano🎵</h1>
+    <strong>Notes:</strong><p>Click or Hover to play the paino</p>
+    <div class="paino">
+        <div class="key" data-note="C">C</div>
+        <div class="key" data-note="D">D</div>
+        <div class="key" data-note="E">E</div>
+        <div class="key" data-note="F">F</div>
+        <div class="key" data-note="G">G</div>
+        <div class="key" data-note="A">A</div>
+        <div class="key" data-note="B">B</div>
+    </div>
+
+    <audio id="audio-C" src="./clavier-music-relaxing-piano-music-259727.mp3"></audio>
+    <audio id="audio-D" src="./delosound-emotional-piano-3-483771.mp3"></audio>
+    <audio id="audio-E" src="./paulyudin-piano-music-piano-485929.mp3"></audio>
+    <audio id="audio-F" src="./delosound-emotional-piano-music-480200.mp3"></audio>
+    <audio id="audio-G" src="./piano_music-happy-birthday-on-piano-121400.mp3"></audio>
+    <audio id="audio-A" src="./sigmamusicart-emotional-piano-music-256262.mp3"></audio>
+    <audio id="audio-B" src="./tunetank-happy-christmas-music-412753.mp3"></audio>
+
+    <script>
+        const keys=document.querySelectorAll(".key")
+        //console.log(keys)
+
+        keys.forEach(function(key){
+            const note=key.getAttribute("data-note")
+            const audio=document.getElementById("audio-"+note)
+
+            //click
+            key.addEventListener('click',function(){
+                audio.currentTime=0;
+                audio.play()
+            })
+            //mouseOver
+            key.addEventListener("mouseover",function(){
+                key.style.backgroundColor="lightBlue"
+            })
+            
+            key.addEventListener("mouseout",function(){
+                key.style.backgroundColor="white"
+            })
+        })
+
+        
+    </script>
+</body>
+</html>

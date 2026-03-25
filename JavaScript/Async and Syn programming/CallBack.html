@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //CallBack:CallBack is a function & it is passed as a parameter(parameter) into another function
+        function DoHomeWork(subject,callback){
+            console.log(`Doing Homework for ${subject}`)
+            //console.log('Doing Homework',subject)
+            callback()//You are calling callback function
+        }
+        DoHomeWork("Maths",function(){
+            console.log("HomeWork Finished")
+        })
+    </script>
+</body>
+</html>

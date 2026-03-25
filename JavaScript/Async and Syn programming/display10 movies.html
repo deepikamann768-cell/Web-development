@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Explorer</title>
+
+<style>
+body{
+    background: linear-gradient(to right,#141e30,#243b55);
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+h1{
+    margin-top: 20px;
+}
+#movie-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    padding: 20px;
+}
+.movie-card{
+    background: #1f2e40;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.movie-card:hover{
+    transform: scale(1.05);
+}
+.movie-card img{
+    width:100%;
+    border-radius: 10px;
+}
+.movie-title{
+    font-size: 14px;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<h1>Movie Explorer</h1>
+<p>Top 10 movies from OMDB API</p>
+
+<div id="movie-container"></div>
+
+<script>
+const API_key="ae6291e0"
+const movieContainer=document.getElementById("movie-container")
+
+async function fetchMovies(){
+    try{
+        const response=await fetch(`https://www.omdbapi.com/?s=Golmaal&apikey=${API_key}`)
+        const data=await response.json()
+
+        console.log(data.Search)
+
+        if(data.Search){
+            displayMovies(data.Search.slice(0,10));//silece means to bberak the array from index 0 to 9
+        }else{
+            movieContainer.innerHTML="<p>No movies found</p>"
+        }
+    }catch(error){
+        console.error("Error fetching movies:",error)
+    }
+}
+
+//Function to display movies
+function displayMovies(movies){
+    movieContainer.innerHTML="";
+    movies.forEach(movie=>{//forEach function will help us to acces the elements inside the array
+        const movieCard=document.createElement("div")//Element = tags in javascript
+        movieCard.classList.add("movie-card")
+
+        movieCard.innerHTML=`
+            <img src="${movie.Poster}" alt="${movie.Title}"/>
+            <div class="movie-title">${movie.Title} (${movie.Year})</div>
+        `;
+
+        movieContainer.appendChild(movieCard)//appendChild is used because it is a child element in the parent div container above
+    })
+}
+//`Hello ${xyz.Title}` WE use back tick in javascript because it is difficult to manage the concept of parameter with "Hello"+xyz.Title
+fetchMovies()
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //OmDb API-http://www.omdbapi.com/?t=MovieName&apikey=ae6291e0
+
+         async function getMovie(MovieName){
+            let url=`http://www.omdbapi.com/?t=${MovieName}&apikey=ae6291e0`
+
+            try{
+                let response = await fetch(url)
+                let data = await response.json()
+                console.log(data.Plot)
+
+            }catch(error){
+                console.log("Error fetching movie",error)
+            }
+
+         }
+         getMovie("The Avengers")
+    </script>
+</body>
+</html>
