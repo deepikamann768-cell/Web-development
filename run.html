@@ -1,0 +1,47 @@
+
+
+const express = require('express')
+const mongoose = require('mongoose')
+
+const app = express()
+app.use(express.json()) //Middle ware to handle json
+
+//1. Connect with local MongoDB Database
+//mongoose("mongodb://localhost:27017/DatabaseName")
+
+mongoose("mongodb://localhost:27017/StudentManagement")
+
+.then(()=>console.log("Connected to MongoDB")  )
+.catch(err=>console.log("MongoDB connection failed", err))
+
+//Define a Schema - Blueprint of the data which we want to store in the collection
+//only these things will be stored other than that all the things will be ignored
+ const studentSchema = new mongoose.Schema({  //new is used to store more than one student data in the collection
+    name:String,
+    age:Number,
+    grade:String
+})
+
+//Collection - Model 
+
+ const Student = mongoose.model('Student', studentSchema)
+
+ //Route/API/URL - Express
+
+ app.post('/add-student' , async(req , res)=>{ // post method tells that i will receive the data from this address
+    const newStudent = Student(req.body) //req.body refers to frontend
+
+    await newStudent.save(); //save use to save data inside the collection
+    res.send("Student register successfully")
+ }) 
+
+ //Details
+ app.get('/students' , async(req , res)=>{
+    const students = await Student.find() //.find is the method to find the data
+    req.json(students)
+ })
+
+ //start the server
+ app.listen(3000, ()=>{
+    console.log("Server running at http://localhost:3000")
+ })

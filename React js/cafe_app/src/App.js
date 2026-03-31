@@ -1,5 +1,5 @@
 import React from "react";
-import Productcards from "./Productcard";
+import Productcard from "./Productcard";
 
 function App(){
   
@@ -9,9 +9,9 @@ function App(){
       <h1>Welcome to raect</h1>
       <p><mark>Command:</mark><del>npm</del><ins>npx create-react-app</ins></p>
       <button>Login</button>
-      <Productcards/>
-      <Productcards/>
-      <Productcards/>
+      <Productcard/>
+      <Productcard/>
+      <Productcard/>
       
     </div>
   )
